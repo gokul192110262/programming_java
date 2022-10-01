@@ -1,27 +1,38 @@
+
 import java.util.Scanner;
-		
 
+public class pattern
+{
+public static void main(String[] args)
+{
+       
+Scanner scanner = new Scanner(System.in);
 
-		public class pattern   . {
-		    public static void main(String[] args) {
-		        System.out.println("Enter the no of Lines :");
-		        Scanner obj = new Scanner(System.in);
-		        int no = obj.nextInt();
-		        int spaces  =no;
-		        int number = 1;
-		        for (int i = 0; i < no; i++) {
-		            for (int s = 1; s <= spaces; s++) {
-		                System.out.print(" ");
-		            }
-		            number = 1;
-		            for (int j = 0; j <= i; j++) {
-		                System.out.print(number + " ");
-		                number = number * (i - j) / (j + 1);
-		            }
-		            spaces--;
-		            System.out.println();
-		        }
-		    }
-		
-
-		}
+System.out.println("Enter the number of rows needed to print the pattern ");
+int rows = scanner.nextInt();
+System.out.println("## Printing the pattern ##");
+for (int i=1; i<=rows; i++)
+ {
+for (int j = 1; j <= i; j++)
+{
+System.out.print("1");
+}
+System.out.println();
+ }
+        
+for (int i=1; i<=rows-1; i++) 
+{
+ for (int j = rows-1; j >= i; j--)
+{
+System.out.print("1");
+}
+for (int k = 1; k < i; k++)
+ {
+System.out.print(" ");
+}
+            
+System.out.println();
+}
+scanner.close();
+}
+}
