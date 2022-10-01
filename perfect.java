@@ -1,23 +1,43 @@
 
-import java.util.*;
-		public class perfect{
-		public static void main(String args[]){
-			int n;
-			Scanner obj=new Scanner(System.in);
-			System.out.print("enter the no of elements : ");
-			n=obj.nextInt();
-			for(int i=1;i<=10000 && n>0;i++){
-				int c=0;
-				for(int j=1;j<i;j++){
-					if(i%j==0){
-					c+=j;
-				}
-			}
-			if(c==i){
-				System.out.println(i);
-			if(n==i) break;
-				else n--;
-			}
-			}
-			}
-		}
+import java.util.Scanner;  
+public class perfect   
+{  
+public static void main(String args[])    
+{ 
+try
+ { 
+long n, sum=0;  
+Scanner sc=new Scanner(System.in);         
+System.out.print("Enter the number: ");  
+n=sc.nextLong();  
+int i=1;
+if(n<=0)
+{
+  System.out.println("Invalid");
+}
+else
+{
+while(i <= n/2)  
+{  
+if(n % i == 0)  
+{   
+sum = sum + i;  
+} 
+i++;  
+}
+if(sum==n)  
+{   
+System.out.println(n+" is a perfect number.");  
+}  
+else  
+{
+System.out.println(n+" is not a perfect number.");   
+}
+}
+}
+catch(Exception e)
+     {
+   System.out.println("Invalid input....");
+     }
+}  
+}

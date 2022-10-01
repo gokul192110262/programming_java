@@ -1,22 +1,31 @@
-
 import java.util.*;
-public class factorial{
-	public static void main(String args[]){
-		try{
-		Scanner obj=new Scanner(System.in);
-		System.out.println("enter the number : ");
-		int n=obj.nextInt();
-		if(n<0)
-			System.out.println("invalid .............");
+
+public class factorial {
+	public static int fac(int n){
+		
+		if(n==0)
+		{
+			return 1;
+		}
 		else{
-		int f=1;
-		for(int i=1;i<=n;i++)
-			f=f*i;
-		System.out.println("factorial of number : "+f);
+			return(n*fac(n-1));
 		}
+	}
+	public static void main(String args[]){
+		Scanner lol=new Scanner(System.in);
+		try{
+			System.out.println("Enter a number :");
+			int n=lol.nextInt();
+			if(n>=0){
+				int fact=fac(n);
+				System.out.println("Factorial of Given Number is :"+fact);
+			}
+			else{
+				System.out.println("Invalid  Input....");
+			}
 		}
-		catch(Exception s){
-			System.out.println("invalid..........");
+		catch(InputMismatchException e){
+			System.out.println("Invalid Input....");
 		}
 	}
 }
